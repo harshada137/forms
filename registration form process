@@ -1,0 +1,31 @@
+// Steps For Creating a full stack Registration form using aws ec2, nginx, php and mysql
+
+# Execute Shell Script
+Step 1 :-  nano lemp.sh // Make shell script file { https://github.com/harshada137/LEMP-SHELL/blob/main/lemp.sh }
+Step 2 :-  chmod +x lemp.sh // give execution permission to the lemp file 
+Step 3:- ./lemp.sh  //execute file
+Step 4:- Paest Your Public IP in browser  //to check if shell script file has executed completely
+
+
+#HTML AND PHP EXECUTION 
+Step 1 :- cd /usr/share/nginx/html/  //Go to html dirctory
+Step 2 :- sudo nano forms.html // create an html page {https://github.com/harshada137/LEMP-SHELL/blob/main/html-code}
+Step 3 :- sido nano submit.php //create your html page {https://github.com/harshada137/LEMP-SHELL/blob/main/php-code} //chage password on line 16
+
+#SQL SET UP
+
+Step 1 :- sudo mysql //entre into mysql
+Step 2 :- ALTER USER 'root'@'localhost' IDENTIFIED BY 'Pass@123'; //set password
+Step 3 :- exit
+Step 4 :- sudo mysql -u root -p //entre using password
+Step 5 :- create database facebook //create database
+Step 6 :- use facebook;
+Step 7 :- CREATE TABLE users(id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(100), email VARCHAR(100), comment VARCHAR(100), website VARCHAR(50), gender VARCHAR(100)); //create table
+
+
+#FINAL SET-UP
+Step 1 :- sudo yum install php.8.3-mysqlnd.x86_64 -y //install php - mysql connector
+//restart all services
+Step 2 :- sudo service nginx restart
+Step 3 :- sudo service mariadb restart
+Step 4 :- sudo service php-fpm restart
